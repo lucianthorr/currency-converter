@@ -12,3 +12,6 @@ def test_convert_same_currency():
 def test_convert_easy_convert():
     assert convert(rates,1,"USD","EUR") == 0.866
     assert convert(rates,1,"EUR","JPY") == 0.007
+
+def test_get_same_rate():
+    assert get_rate(rates, "USD", "USD") == 1
