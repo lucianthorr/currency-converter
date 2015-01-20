@@ -1,4 +1,19 @@
+# Jason Aylward
+# Homework 5
+
+currency.py was built primarily to be run through the test script.
+To test, enter:
+>>py.test
+
+A small interface has been added, to run enter:
+>>python currency.py
+
+The user will be prompted to enter a number and the four possible conversions
+will be printed to the screen.
+
+
 # Currency converter
+
 
 ## Description
 
