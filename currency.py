@@ -30,7 +30,11 @@ if __name__ == '__main__':
              ("EUR", "JPY", 0.007),
              ("JPY", "EUR", 137.20)]
     value = float(input("Please Enter a number: "))
-    print("{} USD converts to {} EUR".format(round(value,3),convert(rates, value, "USD", "EUR")))
-    print("{} USD converts to {} EUR".format(round(value,3),convert(rates, value, "EUR", "USD")))
-    print("{} USD converts to {} EUR".format(round(value,3),convert(rates, value, "EUR", "JPY")))
-    print("{} USD converts to {} EUR".format(round(value,3),convert(rates, value, "JPY", "EUR")))
+    print("{} USD converts to {} EUR".format(round(value, 3),
+          convert(rates, value, "USD", "EUR")))
+    print("{} USD converts to {} EUR".format(round(value, 3),
+          convert(rates, value, "EUR", "USD")))
+    print("{} USD converts to {} EUR".format(round(value, 3),
+          convert(rates, value, "EUR", "JPY")))
+    print("{} USD converts to {} EUR".format(round(value, 3),
+          convert(rates, value, "JPY", "EUR")))
