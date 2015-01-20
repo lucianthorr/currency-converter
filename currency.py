@@ -5,13 +5,16 @@ No functions longer than 7 lines of code
 """
 
 def get_rate(rates, original_currency, to):
+    try:
         rate = [rate for origin, dest, rate in rates
             if (origin == original_currency and dest == to)][0]
         if not rate:
             [rate for origin, dest, rate in rates
                 if (origin == to and dest == original_currency)][0]
         return rate
-
+    except IndexError:
+        print("Unsupported Currency")
+        return 0
 
 
 
