@@ -5,14 +5,13 @@ No functions longer than 7 lines of code
 """
 
 def get_rate(rates, original_currency, to):
-    rate = [rate for origin, dest, rate in rates
+        rate = [rate for origin, dest, rate in rates
             if (origin == original_currency and dest == to)][0]
-    if not rate:
-        [rate for origin, dest, rate in rates
-            if (origin == to and dest == original_currency)][0]
-    elif not rate:
-        return 0
-    return rate
+        if not rate:
+            [rate for origin, dest, rate in rates
+                if (origin == to and dest == original_currency)][0]
+        return rate
+
 
 
 

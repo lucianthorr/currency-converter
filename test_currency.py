@@ -22,3 +22,6 @@ def test_larger_convert():
 
 def test_get_same_rate():
     assert same_rate("USD", "USD") == True
+
+def test_bad_rate():
+    assert convert(rates,1,"CZK","DNM") == 0
