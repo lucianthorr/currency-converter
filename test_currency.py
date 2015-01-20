@@ -13,6 +13,9 @@ def test_easy_convert():
     assert convert(rates,1,"USD","EUR") == 0.866
     assert convert(rates,1,"EUR","JPY") == 0.007
 
+def test_euro_to_dollar():
+    assert convert(rates,1,"EUR","USD") == 1.154
+
 def test_larger_convert():
     assert convert(rates,50,"USD","EUR") == 43.3
     assert convert(rates,25,"EUR","JPY") == 0.175
