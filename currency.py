@@ -25,8 +25,12 @@ def convert(rates, value, original_currency, to):
     return round(value * get_rate(rates, original_currency, to), 3)
 
 if __name__ == '__main__':
-    rates = [("USD", "EUR", 0.866)
-             ("EUR", "USD", 1.154)
-             ("EUR", "JPY", 0.007)
+    rates = [("USD", "EUR", 0.866),
+             ("EUR", "USD", 1.154),
+             ("EUR", "JPY", 0.007),
              ("JPY", "EUR", 137.20)]
-    convert(rates, 1, "USD", "EUR")
+    value = float(input("Please Enter a number: "))
+    print("{} USD converts to {} EUR".format(round(value,3),convert(rates, value, "USD", "EUR")))
+    print("{} USD converts to {} EUR".format(round(value,3),convert(rates, value, "EUR", "USD")))
+    print("{} USD converts to {} EUR".format(round(value,3),convert(rates, value, "EUR", "JPY")))
+    print("{} USD converts to {} EUR".format(round(value,3),convert(rates, value, "JPY", "EUR")))
