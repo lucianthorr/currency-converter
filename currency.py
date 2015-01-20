@@ -5,15 +5,14 @@ No functions longer than 7 lines of code
 """
 
 def get_rate(rates, original_currency, to):
-    rate = 0
-    if [rate for origin, dest, rate in rates
-        if (origin == original_currency and dest == to)][0]:
-            return rate
-    elif [rate for origin, dest, rate in rates
-        if (origin == to and dest == original_currency)][0]:
-            return rate
-    else:
+    rate = [rate for origin, dest, rate in rates
+            if (origin == original_currency and dest == to)][0]
+    if not rate:
+        [rate for origin, dest, rate in rates
+            if (origin == to and dest == original_currency)][0]
+    elif not rate:
         return 0
+    return rate
 
 
 
@@ -26,7 +25,7 @@ def same_rate(original_currency, to):
 def convert(rates, value, original_currency, to):
     if same_rate(original_currency, to):
         return value
-    return value * get_rate(rates, original_currency, to)
+    return round(value * get_rate(rates, original_currency, to),3)
 
 if __name__ == '__main__':
     rates = [("USD", "EUR", 0.866)
